@@ -5,12 +5,20 @@
     <title>03localVarglobalVar.html</title>
     <script>
         //廣域(全域)變數
-
+        var a = 100; //global variable
 
         //宣告式函數定義
-
+        function f() {
+            //var a = 10; //local variable
+            a = 1000;
+            document.write("function in a=" + window.a + "<br>");//函數中指向全域物件可以是window
+            document.write("function in a=" + this.a + "<br>");//函數中指向全域物件可以是this
+        }
 
         //呼叫函數
+        document.write("function out before call a=" + a + "<br>");
+        f();
+        document.write("function out after call a=" + a + "<br>");
     </script>
 </head>
 <body>
