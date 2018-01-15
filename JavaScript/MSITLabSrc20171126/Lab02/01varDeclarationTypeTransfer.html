@@ -22,38 +22,59 @@
 
         //"a+b",\a+b\
         document.write("\"a+b\"" + "<br>");
+
         document.write("\\a+b\\" + "<br>");
+
         document.write("\u4e01" + "<br>"); /* \u4e01 中文字：丁*/
         
         //布林變數
         var b = true; /*true=1  false=0*/
+
         document.write("b=" + b + "typeof b=" + typeof b + "<br>");
+
         var c = b + 1; /*b為true =1*/
+
         document.write("c=" + c + "<br>");
         //轉成布林值
-        //0、NaN、""、null、undefined轉成boolean值時為false
-        document.write(boolean(NaN) + "<br>");
 
-        if (NaN)
-            window.alert(true); /*window可省略*/
-        else
-            alert(false);
+        //0、NaN、""、null、undefined轉成boolean值時為false
+
+        document.write(Boolean(NaN) + "<br>");
+
+        //if (NaN)
+        //    window.alert(true); /*window可省略*/
+        //else
+        //    alert(false);
 
         //null
+
         var n = null;
+
         document.write("n=" + n + "typeof n=" + typeof n + "<br>");//object
+
         //如果沒有初始值，JavaScript會自動將變數的值初始化為undefined(預設值 default value)
+
         var u;
+
         document.write("u=" + u + "typeof u=" + typeof u + "<br>");//undefined
+
         //===============================
         //建立物件，語法一
-
+        var person = new Object();
 
         //定義物件屬性
+        person.name = "Joe";
+        person.ID = "A123456789";
+        document.write(person.name + "：" + person["ID"] + "<br>");
 
+        //建立物件，語法二 literal object 常數物件
+        var cars = { brand: "audi", "Max speed": 300 }
+        document.write(cars.brand + "-" + cars["Max speed"] + "<br>");
 
-
-        //建立物件，語法二
+        //資料型態轉換 Global物件 parseInt，parseFloat直接轉無需宣告(轉整數or浮點數)
+        document.write("parseInt(123.45)=" + parseInt("123.45") + "<br>");
+        document.write("parseInt(12a3.45)=" + parseInt("12a3.45") + "<br>");
+        document.write("parseInt(a123.45)=" + parseInt("a123.45") + "<br>");
 
     </script>
 </head>
