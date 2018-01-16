@@ -22,21 +22,23 @@
         //http://www.w3schools.com/jsref/dom_obj_text.asp
         
 
+        function check() {
+            //取得元素
+            var theName = document.getElementById("idName");
+            //alert(typeof theName); //object
+            //alert(theName); [object HTMLInputElement]
+            //取得元素值
+            var theNameVal = theName.value;
+            alert(typeof theNameVal); //string           
 
-        //取得元素
+            //判斷元素值是否為數字
 
-        //取得元素值
-
-
-
-        //判斷元素值是否為數字
-
-
+        }
     </script>
 </head>
 <body>
-    Age:<input type="text" size="3" maxlength="3" /><!-- 瀏覽器執行到此標籤會建立一個物件-->
+    Age:<input type="text" size="3"id="idName" value="123" maxlength="3" /><!-- 瀏覽器執行到此標籤會建立一個物件-->
     <br />
-    <input type="button" value="checkAge"  />
+    <input type="button" value="checkAge" onclick="check();" />
 </body>
 </html>
