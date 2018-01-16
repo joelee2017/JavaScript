@@ -24,14 +24,21 @@
 
         function check() {
             //取得元素
-            var theName = document.getElementById("idName");
+            var theNameObj = document.getElementById("idName");
             //alert(typeof theName); //object
             //alert(theName); [object HTMLInputElement]
             //取得元素值
-            var theNameVal = theName.value;
-            alert(typeof theNameVal); //string           
+            var theNameVal = theNameObj.value;
+            //alert(typeof theNameVal); //string           
+            //alert(theNameVal); //123
 
+            var theName = document.getElementById("idName").value;
             //判斷元素值是否為數字
+            if (isNaN(theName))
+                alert("please input number 0-9");
+            else
+                alert("Age=" + theName);
+            
 
         }
     </script>
