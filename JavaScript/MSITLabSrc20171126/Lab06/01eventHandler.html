@@ -6,7 +6,7 @@
     <script>
         //****************************************************** 
         //  load事件-- 需要等待圖檔、樣式表等資源載入结束才會觸發
-        //  DOMContnetLoaded事件-- 是HTML文件完全載入且解析結束時觸發,
+        //  DOMContentLoaded事件-- 是HTML文件完全載入且解析結束時觸發,
         //                         而不會等待樣式表、圖檔等資源載入
         //******************************************************
         function f1() {
@@ -18,14 +18,25 @@
         function f3() {
             alert("method 3");
         }   
-        function init() {
-            document.getElementById("idm2").onclick = f2; 
+        //function init() {
+        //    document.getElementById("idm2").onclick = f2; 
+        //    document.getElementById("idm3").addEventListener("click", f3, false);
+        //}
+        //document.addEventListener("DOMContentLoaded", init);
+
+        //  DOMContentLoaded事件-- 是HTML文件完全載入且解析結束時觸發,
+        //                         而不會等待樣式表、圖檔等資源載入
+        //使用函數實字
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("idm2").onclick = f2;
             document.getElementById("idm3").addEventListener("click", f3, false);
-        }
+        });
+
     </script>
 </head>
 <!-- 1.先載入body元素內容(html文件、css樣式、圖檔) , 2.再載入init() -->
-<body onload="init();">
+<!--<body onload="init();">-->
+ <body>
     <!-- HTML屬性事件處理程序，最不好的方法 -->
     <h1 onclick="f1();">method 1</h1>
 
@@ -40,7 +51,6 @@
     <h1 id="idm3">method 3</h1>
     <script>
         //document.getElementById("idm3").addEventListener("click", f3, false);
-    </script>
-    
+    </script>    
 </body>
 </html>
