@@ -17,6 +17,10 @@
             //建立RegExp物件語法 1
             var re = new RegExp("^.+@.+\\..{2,3}"); //()中\為特殊字元所以需要用兩個\\
             //alert(re);
+            var rg = /^[\u4E00-\u9FFF]{2,}$/;  //中文驗證unicode 大小寫無差異
+            alert(rg);
+
+
 
             if (re.test(theEmail))
                 alert("successful");
