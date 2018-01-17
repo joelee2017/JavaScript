@@ -18,11 +18,17 @@
             //slide 72,
             //location.hef-轉向連結到其它網址
             location.href = "01a.html";
-
         }
+        var t = window.setTimeout(f, 2000);
+        function f() {
+            //window.close();
+            location.href = "https://www.google.com";
+        }
+
         function stopf() {
             //slide 71,
             //window.clearInterval-停止計時器
+            window.clearTimeout(t);
         }
     </script>
 </head>
