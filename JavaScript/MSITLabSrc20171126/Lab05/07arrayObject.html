@@ -38,20 +38,36 @@
             document.write("balls3[" + obj + "]=" + balls3[obj] + "<br>");
         }
 
+        document.write("<table>");
+        var strcookie = "name2=Mary;name=Jack";        
+        cookieArray = strcookie.split(";");        
+        for (var i = 0; i < cookieArray.length; i++) {
 
-        //var strcookie = "name2=Mary;name=Jack";
+            thisCookie = cookieArray[i].split("=");
+            console.log(thisCookie);
 
+            cookieName = decodeURI(thisCookie[0]);
+
+            cookieValue = decodeURI(thisCookie[1]);
+
+            document.writeln("<tr><td style='border:solid red 2px'>" + cookieName + "</td><td style='border:solid red 2px'>" + cookieValue + "</td></tr>");
+        }
+        document.write("</table>");
 
         //在陣列後面新增一個元素
+        balls3.push("item");// 新增item元素至array之後
+        alert(balls3);
 
         //刪除陣列最後一個元素
+        balls3.pop();//將最後一個元素item刪除
+        alert(balls3);
 
-        /*
+        
             var balls=["basketball","baseball","tennis","volleyball",123];
             document.write("join('-')="+balls.join("-")+"<br>");
             document.write("reverse().join('=>')="+balls.reverse().join("=>")+"<br>");
             document.write("sort()="+balls.sort()+"<br>");
-       */
+       
     </script>
 </head>
 <body>
