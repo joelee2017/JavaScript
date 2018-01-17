@@ -4,18 +4,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>08regExpObject.html</title>
     <script>
-    /*
+    
         var str="Is this all there is?";
-		var re=new RegExp("is","gi");
+		var re=new RegExp("is","gi"); //g 全域比對， i 忽略大小寫
 		document.write(str.match(re)+"<hr/>");	
-    */
+    
         function chkEmail() {
             //取得元素值
             var theEmail = document.getElementById("idEmail").value;
             //建立RegExp物件語法 2
-            var re = /^.+@.+\..{2,3}$/;
+            //var re = /^.+@.+\..{2,3}$/;
             //建立RegExp物件語法 1
-
+            var re = new RegExp("^.+@.+\\..{2,3}"); //()中\為特殊字元所以需要用兩個\\
+            //alert(re);
 
             if (re.test(theEmail))
                 alert("successful");
