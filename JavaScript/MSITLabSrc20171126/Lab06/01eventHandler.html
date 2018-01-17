@@ -17,25 +17,29 @@
         }
         function f3() {
             alert("method 3");
-        }    
-    
+        }   
+        function init() {
+            document.getElementById("idm2").onclick = f2; 
+            document.getElementById("idm3").addEventListener("click", f3, false);
+        }
     </script>
 </head>
 <!-- 1.先載入body元素內容(html文件、css樣式、圖檔) , 2.再載入init() -->
-<body>
-    <!-- HTML屬性事件處理程序 -->
+<body onload="init();">
+    <!-- HTML屬性事件處理程序，最不好的方法 -->
     <h1 onclick="f1();">method 1</h1>
 
-    <!-- JavaScript屬性事件處理程序 -->
+    <!-- JavaScript屬性事件處理程序，次好 -->
     <h1 id="idm2">method 2</h1>
     <script>
-        document.getElementById("idm2").onclick = f2; //綁定 繫結 binding
+        //document.getElementById("idm2").onclick = f2; //綁定 繫結 binding  
+                                // ()方法名後加小狐號會造成LOADWEB時就執行
     </script>
 
-    <!-- W3C DOM 處理程序 -->
+    <!-- W3C DOM 處理程序，最好的方法 -->
     <h1 id="idm3">method 3</h1>
     <script>
-        document.getElementById("idm3").addEventListener("click", f3, false);
+        //document.getElementById("idm3").addEventListener("click", f3, false);
     </script>
     
 </body>
