@@ -17,8 +17,8 @@
             //取得秒數，分割為兩位數
             var s = d.getSeconds();
 
-            var s1 = parseInt(s / 10); 
-            var s2 = s % 10; 
+            var s1 = parseInt(s / 10); //秒數十位數
+            var s2 = s % 10;  // 秒數個位數
 
             //顯示圖片，對應秒數
             document.getElementById("picS1").src = "WinImages/" + s1 + ".gif";
