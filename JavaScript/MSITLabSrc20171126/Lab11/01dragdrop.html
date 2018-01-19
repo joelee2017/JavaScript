@@ -28,7 +28,7 @@
         function dragStartHandler(e) {
             //儲存要拖放的資料
             //alert(e.target.id); //dragItem
-            e.dataTransfer.setDate("text/plain", e.target.id); //text/plain MIME format
+            e.dataTransfer.setData("text/plain", e.target.id); //text/plain MIME format
         }
 
         function dragoverHandler(e) {
@@ -49,9 +49,6 @@
             //設定屬性及外觀
             eleDiv.setAttribute("class", "dragItemStyle");
             //新增到dropZone or dropZone1 元素後面
-
-
-            //新增到dropZone or dropZone1元素後面
             e.currentTarget.appendChild(eleDiv);
 
         }
