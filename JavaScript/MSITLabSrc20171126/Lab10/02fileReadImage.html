@@ -19,36 +19,51 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("file1").addEventListener("change", fileViewer);
+            document.getElementById("REle").addEventListener("click", RemoveElement);
         });
 
         function fileViewer() {
             //取得使用者在檔案選擇標籤中選取檔案
+            var theFiles = document.getElementById("file1").files;
+            for (var i = 0; theFiles.length; i++) {
+                //1. 建立FileReader物件
+                var reader = new FileReader();
+                //3.onload資料讀取成功完成時觸發
+                reader.addEventListener("load", function (e) {
+                    //4. 將檔案內容暫存
+                    var fileContent = e.target.result;
+                    //5. 建立img標籤
+                    var imgObj = document.createElement("img"); //<img>
+                    
+                    //6. 設定img的src屬性
+                    imgObj.setAttribute("src", fileContent); //<img src=".....">
+                    imgObj.setAttribute("id", "img1");
+                    //7. 設定img的class屬性
+                    imgObj.setAttribute("class", "thumb");//css stype
+                    //8. 將 img 物件新增到div標籤後
+                    document.getElementById("dropZone").appendChild(imgObj);
+                });
+                //2. 使用readAsDataURL方法，讀取檔案內容
+                reader.readAsDataURL(theFiles[i]);
+            }
 
-            //1. 建立FileReader物件
+        }
 
-            //3.onload資料讀取成功完成時觸發
-            reader.addEventListener("load", function (e) {
-                //4. 將檔案內容暫存
-
-                //5. 建立img標籤
-
-                //6. 設定img的src屬性
-
-                //7. 設定img的class屬性
-
-                //8. 將 img 物件新增到div標籤後
-
-            });
-            //2. 使用readAsDataURL方法，讀取檔案內容
-
-
+        function RemoveElement() {
+            var theRE = document.getElementById("img1");
+            for (var i = 0; theRE.length; i++) {
+                theRE.remove();
+            }
+            
         }
     </script>
 
 </head>
 
 <body>
-    <input type="file" id="file1" multiple accept="image/*"><br>
+    <input type="file" id="file1" multiple accept="image/*">
+    <input type="button" id="REle" value="RemoveElement">
+    <br>
     <div id="dropZone"></div>
 </body>
 </html>

@@ -6,7 +6,12 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("file1").addEventListener("change", fileViewer);
+            document.getElementById("Refile").addEventListener("click", Refile);
         });
+        function Refile() {
+            var Refile = document.getElementById("show");
+            Refile.remove();
+        }
 
         function fileViewer(){
             //取得使用者在檔案選擇標籤中選取檔案
@@ -37,7 +42,9 @@
 </head>
 
 <body>
-    <input type="file" id="file1" multiple="multiple"><br>
+    <input type="file" id="file1" multiple="multiple">
+    <input type="button" id="Refile" value="RemoveElement" >
+    <br>
     <textarea cols="60" rows="20" id="show"></textarea>
 </body>
 </html>
