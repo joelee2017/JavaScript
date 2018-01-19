@@ -50,10 +50,11 @@
         }
 
         function RemoveElement() {
-            var theRE = document.getElementById("img1");
-            for (var i = 0; theRE.length; i++) {
-                theRE.remove();
-            }
+            var theRE = document.getElementById("img1").nodeValue;
+            theRE.remove();
+    
+
+                
             
         }
     </script>

@@ -5,8 +5,8 @@
     <title>03sessionStorage.html</title>
     <script >
         document.addEventListener("DOMContentLoaded", function () {
-            if (!sessionStorage.pageLoadCount) {
-                sessionStorage.pageLoadCount = 0;
+            if (!sessionStorage.pageLoadCount) {//sessionStorage視窗關閉時就會消失暫存
+                sessionStorage.pageLoadCount = 0;//pageLoadCount自行取名
             }
             sessionStorage.pageLoadCount = parseInt(sessionStorage.pageLoadCount) + 1;
             document.getElementById('count').textContent = sessionStorage.pageLoadCount;

@@ -18,9 +18,9 @@
     </style>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            document.getElementById("dragItem").addEventListener("dragstart", dragStartHandler);
-            document.getElementById("dropZone").addEventListener("dragover", dragoverHandler);
-            document.getElementById("dropZone").addEventListener("drop", dropHandler);
+            document.getElementById("dragItem").addEventListener("dragstart", dragStartHandler);//拖放操作
+            document.getElementById("dropZone").addEventListener("dragover", dragoverHandler);//拖放的元素開始進入目標元素範圍內
+            document.getElementById("dropZone").addEventListener("drop", dropHandler);//其他元素被拖放到目標元素中
             document.getElementById("dropZone1").addEventListener("dragover", dragoverHandler);
             document.getElementById("dropZone1").addEventListener("drop", dropHandler);
         });

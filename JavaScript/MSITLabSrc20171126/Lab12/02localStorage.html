@@ -5,8 +5,8 @@
     <title>02localStorage.html</title>
     <script >
         document.addEventListener("DOMContentLoaded", function () {
-            if (!localStorage.pageLoadCountLocal) {
-                localStorage.pageLoadCountLocal = 0;
+            if (!localStorage.pageLoadCountLocal) { //localStorage網站永存資料
+                localStorage.pageLoadCountLocal = 0;//pageLoadCountLocal自行取名參數
             }
             localStorage.pageLoadCountLocal = parseInt(localStorage.pageLoadCountLocal) + 1;
             document.getElementById('count').textContent = localStorage.pageLoadCountLocal;
