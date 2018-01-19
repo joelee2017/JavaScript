@@ -18,8 +18,8 @@
             /*
             //NodeList
             var theHobbys = document.getElementsByName("hobby");
-            alert(theHobbys);  //[object NodeList]
-            //var theSelectors = document.querySelectorAll("input");
+            //alert(theHobbys);  //[object NodeList]
+            var theSelectors = document.querySelectorAll("input");
             //alert(theSelectors); //[object NodeList]
             var theHobbysLen = theHobbys.length;
 
@@ -30,22 +30,22 @@
             */
 
 
-            /*
+            
             //HTMLCollection
             var theInputs = document.getElementsByTagName("input");
             //alert(theInputs);  //[object HTMLCollection]
-            //var theClass = document.getElementsByClassName("ch");
+            var theClass = document.getElementsByClassName("ch");
             //alert(theClass);  //[object HTMLCollection]
             var theInputsLen = theInputs.length;
 
             for (var i = 0; i < theInputsLen; i++) {
                 //console.log(theInputs.item(i).value);
-                //console.log(theInputs[i].value);
+               // console.log(theInputs[i].value);
             }
-            //console.log(theInputs.namedItem("txtName").value);  //abc
+            console.log(theInputs.namedItem("txtName").value);  //abc
             console.log(theInputs.namedItem("hobby").value);  //reading 傳回第一個
-            console.log(theInputs["hobby"].value);
-            */
+            console.log(theInputs["hobby"].value);//reading
+            
         }
     </script>
 </head>

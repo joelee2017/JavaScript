@@ -6,21 +6,30 @@
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("CEle").addEventListener("click", CreateElement)
+            document.getElementById("REle").addEventListener("click", RemoveElement)
         });
 
         function CreateElement() {
             var theDIV = document.getElementById("iddiv");  //取得div物件
 
-            var eleP = document.createElement("p");
-            var txtP = document.createTextNode("Hello World");
-            eleP.appendChild(txtP);
+            var eleP = document.createElement("p"); //建立P
+            var txtP = document.createTextNode("Hello World"); //建立TextNode("Hello World")
+            eleP.appendChild(txtP); //<p>Hello World</p> 內文附加到建立的p當中
 
-            theDIV.appendChild(eleP);
+            theDIV.appendChild(eleP); //<div id="iddiv">div<p>Hello World</p></div>
 
-            var eleImg = document.createElement("img");
-            eleImg.setAttribute("src", "DOM/DOMImage/rabbit-hat.gif");
+            var eleImg = document.createElement("img"); //<img>
+            eleImg.setAttribute("src", "DOM/DOMImage/rabbit-hat.gif");//給img 內容圖  <img src="DOM/DOMImage/rabbit-hat.gif">
+            eleImg.setAttribute("id", "imgid"); //給img 加上id屬性以及名稱 <img id="imgid" src="DOM/DOMImage/rabbit-hat.gif"> 
 
             theDIV.appendChild(eleImg);
+            //<div id="iddiv">div<p>Hello World</p><img id="imgid" src="DOM/DOMImage/rabbit-hat.gif"> </div>
+        }
+
+        function RemoveElement() {
+            var theNode = document.getElementById("imgid");
+            //theNode.parentElement.removeChild(theNode); 
+            theNode.remove();
         }
     </script>
 </head>
@@ -28,6 +37,7 @@
 <body>
     <div id="iddiv">div</div>
     <input type="button" id="CEle" value="CreateElement">
+    <input type="button" id="REle" value="RemoveElement">
 
 </body>
 </html>

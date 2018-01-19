@@ -10,21 +10,27 @@
 
         function fileViewer(){
             //取得使用者在檔案選擇標籤中選取檔案
-
+            var theFile = document.getElementById("file1").files;
+            for (var i = 0; i < theFile.length; i++) {
+              //alert(theFile[i].name + "," + theFile[i].type + "(" + theFile[i].size+")");                
+            
 
             //1. 建立FileReader物件
-
+                var reader = new FileReader();
 
             //3.onload資料讀取成功完成時觸發
             reader.addEventListener("load", function (e) {
                 //4. 將檔案內容暫存
-
+                var fileContent = e.target.result;
                 //5. 將檔案內容放textarea標籤內
-
+                //document.getElementById("show").innerHTML = fileContent;
+                document.getElementById("show").insertAdjacentHTML("beforeend", fileContent);
+                //多個檔案時需加在最後所以需要用到insertAdjacentHTML("beforeend", filename);
             });
             //2. 使用readAsText方法，讀取檔案內容
+            reader.readAsText(theFile[i], "UTF-8");
 
-
+            }
         }
     </script>
 
