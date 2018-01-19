@@ -11,20 +11,24 @@
         //*****************************************
 
         document.addEventListener("DOMContentLoaded", function () {
-            alert(document.nodeType);  //9
-            alert(document.nodeName);  //#document
-            alert(document.nodeValue);  //null
+            //alert(document.nodeType);  //9
+            //alert(document.nodeName);  //#document
+            //alert(document.nodeValue);  //null
 
             //取得根元素 documentElement
             var root = document.documentElement;  //HTML
 
 
             var thebody = root.childNodes[1];  //BODY
+            //alert(thebody.nodeName);//BODY
+            alert(thebody.childNodes[1].nodeName); //p
+            alert(thebody.childNodes[1].firstChild.nodeValue); //Ul
+
 
 
             var theNode = root.childNodes[1].childNodes[3].childNodes[3];  //LI
-            //alert(root.childNodes[1].childNodes[3].nodeName);
-            //alert(theNode.nodeName);
+            //alert(root.childNodes[1].childNodes[3].nodeName); //UL
+            //alert(theNode.nodeName); //LI
             //alert(theNode.firstChild.nodeValue);  //bbbbb
             //alert(theNode.previousSibling.previousSibling.firstChild.nodeValue);  //aaaaa
             //alert(theNode.nextSibling.nextSibling.firstChild.nodeValue);  //ccccc
