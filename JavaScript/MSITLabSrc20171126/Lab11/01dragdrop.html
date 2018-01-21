@@ -40,7 +40,7 @@
             //取消預設動作
             e.preventDefault();
             //取出拖放資料
-            var eleID = e.dataTransfer.getData("text/plain");  //id="dragItem";
+            var eleID = e.dataTransfer.getData("text/plain");  //id="dragItem";取出時只要在()加入格式不用帶參數
             var eleObj = document.getElementById(eleID); //<div id="dragItem" draggable="true">Drag me</div>
             //建立div元素
             var eleDiv = document.createElement("div");
